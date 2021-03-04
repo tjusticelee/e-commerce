@@ -15,6 +15,8 @@
         <li><a href="../adminpages/shipments">Shipments</a></li>
       </ul>
       <ul>
+        <li><a href="cart.html">Register</li>
+        <li><a href="cart.html">Login</li>
         <li><a href="cart.html">Cart</li>
         <li><a href="wishlist.html">Wishlist</li>
         <li><a href="home.html">Logout</li>
@@ -25,25 +27,9 @@
       {% for product in product_list %}
         <tr>
           <th class="productbox">{{ product['name']}}</th>
-          <form class="inputbox" method="post">
-            Change name
-            <input type="text">
-          </form>
           <td class="inputbox">{{ product['picture']}}</td>
-          <form class="inputbox" method="post">
-            Change picture
-            <input type="text">
-          </form>
           <td class="inputbox">{{ product['price']}}</td>
-          <form class="inputbox" method="post">
-            Change price
-            <input type="text">
-          </form>
           <td class="inputbox">{{ product['availability']}}</td>
-          <form class="inputbox" method="post">
-            Change availability
-            <input type="text">
-          </form>
         </tr>
      {% endfor %}
      </tbody>
