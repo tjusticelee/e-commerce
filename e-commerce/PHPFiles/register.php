@@ -13,8 +13,8 @@ $password = $_POST['password'];
 $DOB = $_POST['DOB'];
 $Phone = $_POST['phone'];
 $Role = $_POST['role'];
-$sql = "INSERT INTO Accounts( firstName, lastName, email, password, DOB, phone, role, approved) VALUES(
-  '$first_name', ' $last_name', '$email', '$password', '$DOB', '$Phone','$Role', 'False')";
+$sql = "INSERT INTO Accounts( firstName, lastName, email, password, DOB, phone, role) VALUES(
+  '$first_name', ' $last_name', '$email', '$password', '$DOB', '$Phone','$Role')";
   if (mysqli_query($link, $sql)){
     if($Role == 'F'){
       if (mysqli_query($link, $insertion)) {

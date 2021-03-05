@@ -15,18 +15,15 @@ if ($result = mysqli_query($link, $sql)) {
       session_start();
       $_SESSION['Id'] = $row['id'];
       $_SESSION['role'] = $row['role'];
-      $_SESSION['approved'] = $row['approved'];
       session_write_close();
       if($row['role'] == 'C'){
       header("Location:/e-commerce/e-commerce/templates/login.html");
     } else if($row['role'] == 'F'){
         header("Location:/e-commerce/e-commerce/templates/register.html");
     } else if($row['role'] == 'G'){
-      header('Location:/e-commerce/e-commerce/templates/profile.html');
+      header("Location:/e-commerce/e-commerce/templates/home.html");
     } else if($row['role'] == 'D'){
-      header('Location:/e-commerce/e-commerce/templates/expenses.html');
-    } else if($row['role'] == 'B' or $row['role'] == 'A'){
-      header('Location:/e-commerce/e-commerce/templates/cart.html');
+      header("Location:/e-commerce/e-commerce/templates/admin.html");
     }
   }
 }
