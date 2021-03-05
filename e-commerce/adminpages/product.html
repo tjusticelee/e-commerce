@@ -9,15 +9,9 @@
     <header>
       <h1>Home</h1>
       <ul>
-        <li><a href="../userpages/expenses.html">Expenses</a></li>
-        <li><a href="product.html">Products</a></li>
+        <li><a href="expenses.html">Expenses</a></li>
         <li><a href="management.html">Management</a></li>
         <li><a href="shipments.html">Shipments</a></li>
-      </ul>
-      <ul>
-        <li><a href="../userpages/cart.html">Cart</li>
-        <li><a href="../userpages/wishlist.html">Wishlist</li>
-        <li><a href="../userpages/home.html">Logout</li>
       </ul>
     </header>
     <table>
@@ -25,22 +19,22 @@
       {% for product in product_list %}
         <tr>
           <th class="productbox">{{ product['name']}}</th>
-          <form class="inputbox" method="post">
+          <form class="inputbox" name="product_name" method="post">
             Change name
             <input type="text">
           </form>
           <td class="inputbox">{{ product['picture']}}</td>
-          <form class="inputbox" method="post">
+          <form class="inputbox" name="product_picture" method="post">
             Change picture
             <input type="text">
           </form>
           <td class="inputbox">{{ product['price']}}</td>
-          <form class="inputbox" method="post">
+          <form class="inputbox" name="product_price" method="post">
             Change price
             <input type="text">
           </form>
           <td class="inputbox">{{ product['availability']}}</td>
-          <form class="inputbox" method="post">
+          <form class="inputbox" name="product_availability" method="post">
             Change availability
             <input type="text">
           </form>
