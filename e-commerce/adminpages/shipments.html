@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shipments</title>
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <header>
+      <h1>Shipments</h1>
+      <ul>
+        <li><a href="expenses.html">Expenses</a></li>
+        <li><a href="management.html">Management</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="../../index.html">User Home</a></li>
+      </ul>
+    </header>
+    <table>
+      <tbody>
+      {% for shipment in shipments %}
+        <tr>
+          <th class="productbox">{{ shipment['name']}}</th>
+
+          <td class="productbox">{{ shipment['picture']}}</td>
+
+          <td class="productbox">{{ shipment['price']}}</td>
+
+          <td class="productbox">{{ shipment['user_bought']}}</td>
+
+          <td class="productbox">{{ shipment['time_bought']}}</td>
+        </tr>
+     {% endfor %}
+     </tbody>
+    </table>
+  </body>
+</html>

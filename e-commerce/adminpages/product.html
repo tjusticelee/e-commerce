@@ -2,16 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>Products</title>
     <link rel="stylesheet" href="">
   </head>
   <body>
     <header>
-      <h1>Home</h1>
+      <h1>Products</h1>
       <ul>
         <li><a href="expenses.html">Expenses</a></li>
         <li><a href="management.html">Management</a></li>
         <li><a href="shipments.html">Shipments</a></li>
+        <li><a href="../../index.html">User Home</a></li>
       </ul>
     </header>
     <table>
@@ -23,17 +24,17 @@
             Change name
             <input type="text">
           </form>
-          <td class="inputbox">{{ product['picture']}}</td>
+          <td class="productbox">{{ product['picture']}}</td>
           <form class="inputbox" name="product_picture" method="post">
             Change picture
             <input type="text">
           </form>
-          <td class="inputbox">{{ product['price']}}</td>
+          <td class="productbox">{{ product['price']}}</td>
           <form class="inputbox" name="product_price" method="post">
             Change price
             <input type="text">
           </form>
-          <td class="inputbox">{{ product['availability']}}</td>
+          <td class="productbox">{{ product['availability']}}</td>
           <form class="inputbox" name="product_availability" method="post">
             Change availability
             <input type="text">

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Management</title>
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <header>
+      <h1>Home</h1>
+      <ul>
+        <li><a href="expenses.html">Expenses</a></li>
+        <li><a href="management.html">Management</a></li>
+        <li><a href="shipments.html">Shipments</a></li>
+        <li><a href="../../index.html">User Home</a></li>
+      </ul>
+    </header>
+    <table>
+      <tbody>
+      {% for user in users %}
+        <tr>
+          <h2>Basic Information</h2>
+          <th class="productbox">{{ user['first_name']}}</th>
+
+          <th class="productbox">{{ user['last_name']}}</th>
+
+          <th class="productbox">{{ user['email']}}</th>
+
+          <th class="productbox">{{ user['phone_number']}}</th>
+
+          <th class="productbox">{{ user['date_of_birth']}}</th>
+
+          <h2>Shipping Information</h2>
+
+          <th class="productbox">{{ user['address']}}</th>
+
+          <th class="productbox">{{ user['state']}}</th>
+
+          <th class="productbox">{{ user['country']}}</th>
+
+          <th class="productbox">{{ user['zip_code']}}</th>
+
+          <button type="button" name="Removal">Delete User</button>
+        </tr>
+     {% endfor %}
+     </tbody>
+    </table>
+  </body>
+</html>
