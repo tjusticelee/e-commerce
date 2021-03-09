@@ -1,7 +1,10 @@
 
-
-CREATE DATABASE  IF NOT EXISTS capstoneproj;
-use capstoneproj;
+DROP TABLE IF EXISTS role CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS inventory CASCADE;
+DROP TABLE IF EXISTS cart CASCADE;
+DROP TABLE IF EXISTS cartitems CASCADE;
+DROP TABLE IF EXISTS wishlist CASCADE;
 
 CREATE TABLE role (
   role_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -29,15 +32,33 @@ CREATE TABLE inventory (
   product_name varchar(255),
   product_desc varchar(255),
   quanity int,
-  product_cost decimal(10,2),
+  product_make_cost decimal(10,2),
   product_price decimal(10,2),
-  in_stock BOOLEAN,
-)
+  in_stock BOOLEAN
+);
 
 CREATE TABLE cart (
-
+  cart_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   user_id int,
-  FOREIGN KEY (user_id)
-    REFERENCES users(user_id)
-    ON DELETE CASCADE
-)
+  product_id int,
+  product_name varchar(255),
+  product_price decimal(10,2)
+);
+
+CREATE TABLE cartitems (
+  product_id int NOT NULL REFERENCES inventory(product_id) ON DELETE CASCADE,
+  cart_id int NOT NULL REFERENCES cart(cart_id) ON DELETE CASCADE
+);
+
+CREATE TABLE wishlist (
+  list_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  user_id int,
+  product_id int,
+  product_name varchar(255),
+  product_price decimal(10,2)
+);
+
+CREATE TABLE wishitems (
+  product_id int NOT NULL REFERENCES inventory(product_id) ON DELETE CASCADE,
+  cart_id int NOT NULL REFERENCES cart(cart_id) ON DELETE CASCADE
+);
