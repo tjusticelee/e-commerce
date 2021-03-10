@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    <header>
+      <h1>Wishlist</h1>
+      <ul>
+        <li><a href="profile.html">Profile</li>
+        <li><a href="cart.html">Cart</li>
+        <li><a href="wishlist.html">Wishlist</li>
+        <li><a href="../../index.html">Logout</li>
+      </ul>
+    </header>
+    <table>
+      <tbody>
+      {% for product in inventory %}
+        <tr>
+          <th class="productbox">{{ inventory['product_id']}}</th>
+
+          <th class="productbox">{{ inventory['product_name']}}</th>
+
+          <td class="productbox">{{ inventory['product_desc']}}</td>
+
+          <td class="productbox">{{ inventory['quantity']}}</td>
+
+          <td class="productbox">{{ inventory['product_make_cost']}}</td>
+
+          <td class="productbox">{{ inventory['product_price']}}</td>
+
+          <td class="productbox">{{ inventory['in_stock']}}</td>
+
+          <button type="button" name="Removal">Remove item from wishlist</button>
+        </tr>
+     {% endfor %}
+     </tbody>
+    </table>
+  </body>
+</html>
