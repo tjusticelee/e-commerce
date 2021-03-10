@@ -21,14 +21,19 @@
     </header>
     <table>
       <tbody>
-      {% for product in product_list %}
-        <tr>
-          <th class="productbox">{{ product['name']}}</th>
-          <td class="inputbox">{{ product['picture']}}</td>
-          <td class="inputbox">{{ product['price']}}</td>
-          <td class="inputbox">{{ product['availability']}}</td>
-        </tr>
-     {% endfor %}
+      <?php for $product in $inventory ?>
+      <tr>
+
+        <th class="productbox"><?php echo $inventory['product_name']; ?></th>
+
+        <td class="productbox"><?php echo $inventory['product_desc']; ?></td>
+
+        <td class="productbox"><?php echo $inventory['quantity']; ?></td>
+
+        <td class="productbox"><?php echo $inventory['product_price']; ?></td>
+
+        <td class="productbox"><?php echo $inventory['in_stock']; ?></td>
+     <?php endfor; ?>
      </tbody>
     </table>
   </body>

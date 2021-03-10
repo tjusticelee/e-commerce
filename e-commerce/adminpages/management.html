@@ -17,34 +17,34 @@
     </header>
     <table>
       <tbody>
-      {% for user in users %}
+      <?php for $user in $users ?>
         <tr>
           <h2>Basic Information</h2>
-          <th class="productbox">{{ users['firstName']}}</th>
+          <th class="productbox"><?php echo $users['firstName']; ?></th>
 
-          <th class="productbox">{{ users['lastName']}}</th>
+          <th class="productbox"><?php echo $users['lastName']; ?></th>
 
-          <th class="productbox">{{ users['email']}}</th>
+          <th class="productbox"><?php echo $users['email']; ?></th>
 
-          <th class="productbox">{{ users['phone']}}</th>
+          <th class="productbox"><?php echo $users['phone']; ?></th>
 
-          <th class="productbox">{{ users['DOB']}}</th>
+          <th class="productbox"><?php echo $users['DOB']; ?></th>
 
-          <th class="productbox">{{ users['role']}}</th>
+          <th class="productbox"><?php echo $users['role']; ?></th>
 
           <h2>Shipping Information</h2>
 
-          <th class="productbox">{{ user['address']}}</th>
+          <th class="productbox"><?php echo $users['address']; ?></th>
 
-          <th class="productbox">{{ user['state']}}</th>
+          <th class="productbox"><?php echo $users['state']; ?></th>
 
-          <th class="productbox">{{ user['country']}}</th>
+          <th class="productbox"><?php echo $users['country']; ?></th>
 
-          <th class="productbox">{{ user['zipCode']}}</th>
+          <th class="productbox"><?php echo $users['zipCode']; ?></th>
 
           <button type="button" name="Removal">Delete User</button>
         </tr>
-     {% endfor %}
+     <?php endfor; ?>
      </tbody>
     </table>
   </body>

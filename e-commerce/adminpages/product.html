@@ -17,45 +17,45 @@
     </header>
     <table>
       <tbody>
-      {% for product in inventory %}
+      <?php for $product in $inventory ?>
         <tr>
-          <th class="productbox">{{ inventory['product_id']}}</th>
+          <th class="productbox"><?php echo $inventory['product_id']; ?></th>
           <form class="inputbox" name="product_id" method="post">
             Change id
             <input type="text">
           </form>
-          <th class="productbox">{{ inventory['product_name']}}</th>
+          <th class="productbox"><?php echo $inventory['product_name']; ?></th>
           <form class="inputbox" name="product_name" method="post">
             Change name
             <input type="text">
           </form>
-          <td class="productbox">{{ inventory['product_desc']}}</td>
+          <td class="productbox"><?php echo $inventory['product_desc']; ?></td>
           <form class="inputbox" name="product_desc" method="post">
             Change description
             <input type="text">
           </form>
-          <td class="productbox">{{ inventory['quantity']}}</td>
+          <td class="productbox"><?php echo $inventory['quantity']; ?></td>
           <form class="inputbox" name="quantity" method="post">
             Change quantity
             <input type="text">
           </form>
-          <td class="productbox">{{ inventory['product_make_cost']}}</td>
+          <td class="productbox"><?php echo $inventory['product_make_cost']; ?></td>
           <form class="inputbox" name="product_make_cost" method="post">
             Change cost of creation
             <input type="text">
           </form>
-          <td class="productbox">{{ inventory['product_price']}}</td>
+          <td class="productbox"><?php echo $inventory['product_price']; ?></td>
           <form class="inputbox" name="product_price" method="post">
             Change price
             <input type="text">
           </form>
-          <td class="productbox">{{ inventory['in_stock']}}</td>
+          <td class="productbox"><?php echo $inventory['in_stock']; ?></td>
           <form class="inputbox" name="in_stock" method="post">
             Change availability
             <input type="text">
           </form>
         </tr>
-     {% endfor %}
+     <?php endfor; ?>
      </tbody>
     </table>
   </body>

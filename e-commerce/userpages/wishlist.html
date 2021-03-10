@@ -17,25 +17,16 @@
     </header>
     <table>
       <tbody>
-      {% for product in inventory %}
+      <?php for $user in $wishlist ?>
         <tr>
-          <th class="productbox">{{ inventory['product_id']}}</th>
 
-          <th class="productbox">{{ inventory['product_name']}}</th>
+          <th class="productbox"><?php echo $wishlist['product_name']; ?></th>
 
-          <td class="productbox">{{ inventory['product_desc']}}</td>
-
-          <td class="productbox">{{ inventory['quantity']}}</td>
-
-          <td class="productbox">{{ inventory['product_make_cost']}}</td>
-
-          <td class="productbox">{{ inventory['product_price']}}</td>
-
-          <td class="productbox">{{ inventory['in_stock']}}</td>
+          <td class="productbox"><?php echo $inventory['product_price']; ?></td>
 
           <button type="button" name="Removal">Remove item from wishlist</button>
         </tr>
-     {% endfor %}
+     <?php endfor; ?>
      </tbody>
     </table>
   </body>

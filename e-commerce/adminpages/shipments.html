@@ -17,19 +17,19 @@
     </header>
     <table>
       <tbody>
-      {% for shipment in shipments %}
+      <?php for $shipment in $shipments ?>
         <tr>
-          <th class="productbox">{{ shipment['name']}}</th>
+          <th class="productbox"><?php echo $shipment['name']; ?></th>
 
-          <td class="productbox">{{ shipment['picture']}}</td>
+          <td class="productbox"><?php echo $shipment['picture']; ?></td>
 
-          <td class="productbox">{{ shipment['price']}}</td>
+          <td class="productbox"><?php echo $shipment['price']; ?></td>
 
-          <td class="productbox">{{ shipment['user_bought']}}</td>
+          <td class="productbox"><?php echo $shipment['user_bought']; ?></td>
 
-          <td class="productbox">{{ shipment['time_bought']}}</td>
+          <td class="productbox"><?php echo $shipment['time_bought']; ?></td>
         </tr>
-     {% endfor %}
+     <?php endfor; ?>
      </tbody>
     </table>
   </body>
