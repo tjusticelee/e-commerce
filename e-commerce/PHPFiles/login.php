@@ -17,13 +17,13 @@ if ($result = mysqli_query($link, $sql)) {
       $_SESSION['role'] = $row['role'];
       session_write_close();
       if($row['role'] == 'C'){
-      header("Location:/e-commerce/e-commerce/templates/login.html");
+      header("Location:/e-commerce/e-commerce/userpages/login.html");
     } else if($row['role'] == 'F'){
-        header("Location:/e-commerce/e-commerce/templates/register.html");
+        header("Location:/e-commerce/e-commerce/userpages/register.html");
     } else if($row['role'] == 'G'){
-      header("Location:/e-commerce/e-commerce/templates/index.html");
+      header("Location:/e-commerce/e-commerce/userpages/index.html");
     } else if($row['role'] == 'D'){
-      header("Location:/e-commerce/e-commerce/templates/admin.html");
+      header("Location:/e-commerce/e-commerce/adminpages/admin.html");
     }
   }
 }

@@ -24,7 +24,7 @@ $sql = "INSERT INTO Accounts( firstName, lastName, email, password, DOB, phone, 
       }
     }
       mysqli_close();
-      header("Location:/e-commerce/e-commerce/templates/login.html");
+      header("Location:/e-commerce/e-commerce/userpages/login.html");
   } else {
       echo "Sorry the information you entered has an error." .mysqli_error($link);
   }
