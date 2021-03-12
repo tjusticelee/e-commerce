@@ -16,7 +16,7 @@ $Role = $_POST['role'];
 $sql = "INSERT INTO Accounts( firstName, lastName, email, password, DOB, phone, role) VALUES(
   '$first_name', ' $last_name', '$email', '$password', '$DOB', '$Phone','$Role')";
   if (mysqli_query($link, $sql)){
-    if($Role == 'F'){
+    if($Role == '1'){
       if (mysqli_query($link, $insertion)) {
         echo "Valid";
       } else {

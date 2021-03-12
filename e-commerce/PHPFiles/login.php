@@ -21,7 +21,7 @@ if ($result = mysqli_query($link, $sql)) {
     } else if($row['role'] == 'F'){
         header("Location:/e-commerce/e-commerce/templates/register.html");
     } else if($row['role'] == 'G'){
-      header("Location:/e-commerce/e-commerce/templates/home.html");
+      header("Location:/e-commerce/e-commerce/templates/index.html");
     } else if($row['role'] == 'D'){
       header("Location:/e-commerce/e-commerce/templates/admin.html");
     }
