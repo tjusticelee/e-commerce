@@ -12,4 +12,4 @@ INSERT INTO inventory (product_name, product_desc, quanity, product_make_cost,
 VALUES ('Red shirt', 'A red shirt.', 1000, 1.00, 10.00, TRUE),
       ('Blue pants', 'Also known as jeans.', 1000, 3.00, 15.00, TRUE),
       ('Orange hat', 'Can be used for hunting.', 0, 1.60, 9.00, FALSE),
-      ('Green socks', 'Ran through the grass before sold', 1000, 2.00, 12.00, TRUE),
+      ('Green socks', 'Ran through the grass before sold', 1000, 2.00, 12.00, TRUE);
