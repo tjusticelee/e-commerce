@@ -21,21 +21,21 @@
     <h2>Profile Information</h2>
     <div class="information">
       <?php echo $users['firstName']; ?>
-      <form class="inputbox" method="post">
+      <form class="inputbox" name="first_name" method="post">
         Change first name
         <input type="text">
       </form>
     </div>
     <div class="information">
       <?php echo $users['lastName']; ?>
-      <form class="inputbox" method="post">
+      <form class="inputbox" name="last_name" method="post">
         Change last name
         <input type="text">
       </form>
     </div>
     <div class="information">
       <?php echo $users['email']; ?>
-      <form class="inputbox" method="post">
+      <form class="inputbox" name="email_id" method="post">
         Change email
         <input type="text">
       </form>
@@ -49,7 +49,7 @@
     </div>
     <div class="information">
       <?php echo $users['password']; ?>
-      <form class="inputbox" method="post">
+      <form class="inputbox" name="phone" method="post">
         Change password
         <input type="text">
       </form>
@@ -62,32 +62,32 @@
     </div>
     <h2>Shipping information</h2>
     <div class="information">
-      <?php echo $users['address']; ?>
-      <form class="inputbox" method="post">
+      <?php echo $users['streetAddress']; ?>
+      <form class="inputbox" name="streetAddress" method="post">
         Change address
         <input type="text">
     </div>
     <div class="information">
+      <?php echo $users['city']; ?>
+      <form class="inputbox" name="city" method="post">
+        Change city
+        <input type="text">
+    </div>
+    <div class="information">
       <?php echo $users['state']; ?>
-      <form class="inputbox" method="post">
+      <form class="inputbox" name="state" method="post">
         Change state
         <input type="text">
     </div>
     <div class="information">
-      <?php echo $users['country']; ?>
-      <form class="inputbox" method="post">
-        Change country
-        <input type="text">
-    </div>
-    <div class="information">
-      <?php echo $users['zip_code']; ?>
-      <form class="inputbox" method="post">
+      <?php echo $users['zipCode']; ?>
+      <form class="inputbox" name="zipCode" method="post">
         Change zip code
         <input type="text">
     </div>
 
     <div class="information">
-      <form class="inputbox" method="post">
+      <form class="inputbox" name="delete" method="post">
         Delete account
         <input type="text">
     </div>
