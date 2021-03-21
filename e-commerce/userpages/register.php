@@ -1,3 +1,5 @@
+<?php
+echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -53,8 +55,10 @@
       <input type="text">
     </form>
   </div>
-  <a href="../adminpages/expenses.html" class="loginmovement">Ok</a>
-  <a href="../../index.html" class="loginmovement">Cancel</a>
+  <a href="../adminpages/expenses.php" class="loginmovement">Ok</a>
+  <a href="../../index.php" class="loginmovement">Cancel</a>
 </body>
 
 </html>
+EOT;
+?>

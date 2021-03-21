@@ -1,3 +1,5 @@
+<?php
+echo <<<"EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -49,3 +51,5 @@
     </table>
   </body>
 </html>
+EOT;
+?>

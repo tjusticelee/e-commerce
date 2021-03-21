@@ -1,3 +1,5 @@
+<?php
+echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -9,10 +11,10 @@
     <header>
       <h1>Wishlist</h1>
       <ul>
-        <li><a href="profile.html">Profile</li>
-        <li><a href="cart.html">Cart</li>
-        <li><a href="wishlist.html">Wishlist</li>
-        <li><a href="../../index.html">Logout</li>
+        <li><a href="profile.php">Profile</li>
+        <li><a href="cart.php">Cart</li>
+        <li><a href="wishlist.php">Wishlist</li>
+        <li><a href="../../index.php">Logout</li>
       </ul>
     </header>
     <table>
@@ -31,3 +33,5 @@
     </table>
   </body>
 </html>
+EOT;
+?>

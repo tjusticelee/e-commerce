@@ -1,3 +1,5 @@
+<?php
+echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -12,10 +14,10 @@
         include("admin_nav_movement.php");
       ?>
       <ul>
-        <li><a href="profile.html">Profile</li>
-        <li><a href="cart.html">Cart</li>
-        <li><a href="wishlist.html">Wishlist</li>
-        <li><a href="../../index.html">Logout</li>
+        <li><a href="profile.php">Profile</li>
+        <li><a href="cart.php">Cart</li>
+        <li><a href="wishlist.php">Wishlist</li>
+        <li><a href="../../index.php">Logout</li>
       </ul>
     </header>
     <h2>Profile Information</h2>
@@ -94,3 +96,5 @@
 
   </body>
 </html>
+EOT;
+?>
