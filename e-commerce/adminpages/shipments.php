@@ -1,4 +1,5 @@
 <?php
+include admin_only.php
 echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
