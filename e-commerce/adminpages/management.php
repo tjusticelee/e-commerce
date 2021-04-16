@@ -6,7 +6,7 @@ echo <<<"EOT"
   <head>
     <meta charset="utf-8">
     <title>User Management</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>
@@ -45,7 +45,9 @@ echo <<<"EOT"
 
           <th class="productbox"><?php echo $users['zipCode']; ?></th>
 
-          <button type="button" name="Removal">Delete User</button>
+          <form class="inputbox" name="removal" method="post">
+            Delete User
+            <input type="text">
         </tr>
      <?php endfor; ?>
      </tbody>
@@ -53,4 +55,17 @@ echo <<<"EOT"
   </body>
 </html>
 EOT;
+$delete_user = $_POST['removal'];
+$sql = "DELETE FROM users WHERE role = %s VALUES(
+  '$delete_user')";
+}
+if (mysqli_query($link, $sql)){
+    if (mysqli_query($link, $deletion)) {
+      echo "Valid";
+    } else {
+        echo "ERROR: Could not able to execute $deletion. " . mysqli_error($link);
+    }
+    mysqli_close();
+    header("Location:/e-commerce/e-commerce/adminpages/management.php");
+}
 ?>

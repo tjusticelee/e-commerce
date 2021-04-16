@@ -6,12 +6,14 @@ echo <<< "EOT"
 <head>
   <meta charset="utf-8">
   <title>Register</title>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="../../index.css">
 </head>
 
 <body>
   <header>
-    Register
+    <h1>
+      Register
+    </h1>
   </header>
   <div class="information">
     <form class="inputbox" name="first_name" method="post">
@@ -55,8 +57,10 @@ echo <<< "EOT"
       <input type="text">
     </form>
   </div>
-  <a href="../adminpages/expenses.php" class="loginmovement">Ok</a>
-  <a href="../../index.php" class="loginmovement">Cancel</a>
+  <div class="information">
+    <a href="../adminpages/expenses.php" class="loginmovement">Ok</a>
+    <a href="../../index.php" class="loginmovement">Cancel</a>
+  </div>
 </body>
 
 </html>

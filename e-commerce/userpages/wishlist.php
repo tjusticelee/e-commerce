@@ -5,7 +5,7 @@ echo <<< "EOT"
   <head>
     <meta charset="utf-8">
     <title>Wishlist</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>

@@ -6,7 +6,7 @@ echo <<<"EOT"
   <head>
     <meta charset="utf-8">
     <title>Products</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>
@@ -64,4 +64,23 @@ echo <<<"EOT"
   </body>
 </html>
 EOT;
+if(isset($_POST['product_information'])){
+$product_id = $_POST['product_id'];
+$product_name = $_POST['product_name'];
+$product_desc = $_POST['product_desc'];
+$quantity = $_POST['quantity'];
+$product_make_cost = $_POST['product_make_cost'];
+$product_price = $_POST['product_price'];
+$sql = "INSERT INTO inventory(product_id, product_name, product_desc, quantity, product_make_cost, product_price) VALUES(
+  '$product_id', '$product_name','$product_desc', '$quantity', '$product_make_cost', '$product_price')";
+}
+if (mysqli_query($link, $sql)){
+    if (mysqli_query($link, $insertion)) {
+      echo "Valid";
+    } else {
+        echo "ERROR: Could not able to execute $insertion. " . mysqli_error($link);
+    }
+    mysqli_close();
+    header("Location:/e-commerce/e-commerce/adminpages/product.php");
+}
 ?>

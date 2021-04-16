@@ -6,7 +6,7 @@ echo <<< "EOT"
   <head>
     <meta charset="utf-8">
     <title>Shipments</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>

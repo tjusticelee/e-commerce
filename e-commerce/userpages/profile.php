@@ -5,7 +5,7 @@ echo <<< "EOT"
   <head>
     <meta charset="utf-8">
     <title>Profile</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>
@@ -57,7 +57,7 @@ echo <<< "EOT"
       </form>
     <div class="information">
       <?php echo $users['DOB']; ?>
-      <form class="inputbox" method="post">
+      <form class="inputbox" name="dob" method="post">
         Change date of birth
         <input type="text">
       </form>
@@ -65,7 +65,7 @@ echo <<< "EOT"
     <h2>Shipping information</h2>
     <div class="information">
       <?php echo $users['streetAddress']; ?>
-      <form class="inputbox" name="streetAddress" method="post">
+      <form class="inputbox" name="street_Address" method="post">
         Change address
         <input type="text">
     </div>
@@ -82,8 +82,8 @@ echo <<< "EOT"
         <input type="text">
     </div>
     <div class="information">
-      <?php echo $users['zipCode']; ?>
-      <form class="inputbox" name="zipCode" method="post">
+      <?php echo $users['zip_Code']; ?>
+      <form class="inputbox" name="zip_Code" method="post">
         Change zip code
         <input type="text">
     </div>
@@ -97,4 +97,32 @@ echo <<< "EOT"
   </body>
 </html>
 EOT;
+if(isset($_POST['Register'])){
+  $first_name = $_POST['first_name'];
+  $last_name = $_POST['last_name'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $password = $_POST['password'];
+  $dob = $_POST['dob'];
+  $street_Address = $_POST['street_Address'];
+  $city = $_POST['city'];
+  $state = $_POST['state'];
+  $zip_Code = $_POST['zip_Code'];
+  $sql = "INSERT INTO expenses(first_name, last_name, email, phone, password, dob, street_Address, city, state, zip_Code) VALUES(
+    '$first_name', '$last_name', '$email', '$phone', '$password', '$dob', '$street_Address', '$city', '$state', '$zip_Code')";
+}
+$delete_account = $_POST['deletion'];
+$sql = "DELETE FROM users WHERE role = %s VALUES(
+  '$delete_account')";
+}
+if (mysqli_query($link, $sql)){
+    if (mysqli_query($link, $deletion)) {
+      echo "Valid";
+    } else {
+        echo "ERROR: Could not able to execute $deletion. " . mysqli_error($link);
+    }
+    mysqli_close();
+    header("Location:/e-commerce/e-commerce/adminpages/management.php");
+}
+
 ?>
