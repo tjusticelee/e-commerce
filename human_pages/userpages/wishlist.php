@@ -5,7 +5,7 @@ echo <<< "EOT"
   <head>
     <meta charset="utf-8">
     <title>Wishlist</title>
-    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="../index.css">
   </head>
   <body>
     <header>
@@ -34,4 +34,17 @@ echo <<< "EOT"
   </body>
 </html>
 EOT;
+$remove_item = $_POST['Removal'];
+$sql = "DELETE FROM wishlist WHERE product_name = %s VALUES(
+  '$remove_item')";
+}
+if (mysqli_query($link, $sql)){
+    if (mysqli_query($link, $deletion)) {
+      echo "Valid";
+    } else {
+        echo "ERROR: Could not able to execute $deletion. " . mysqli_error($link);
+    }
+    mysqli_close();
+    header("Location:/e-commerce/e-commerce/adminpages/wishlist.php");
+}
 ?>
