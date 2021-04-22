@@ -1,4 +1,9 @@
 <?php
+$link = mysqli_connect("localhost", "root", "", "Data");
+
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+  }
 echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -50,4 +55,17 @@ echo <<< "EOT"
   </body>
 </html>
 EOT;
+if(isset($_POST['purchase'])){
+$sql = "INSERT INTO inventory(in_wishlist) VALUES(
+  'true')";
+  if (mysqli_query($link, $sql)){
+      if (mysqli_query($link, $insertion)) {
+        echo "Valid";
+      } else {
+          echo "ERROR: Could not able to execute $insertion. " . mysqli_error($link);
+      }
+      mysqli_close();
+      header("Location:/e-commerce/e-commerce/adminpages/index.php");
+  }
+}
 ?>

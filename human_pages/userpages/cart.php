@@ -1,11 +1,16 @@
 <?php
+$link = mysqli_connect("localhost", "root", "", "Data");
+
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+  }
 echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Home</title>
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>

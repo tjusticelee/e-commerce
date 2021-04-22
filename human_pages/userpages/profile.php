@@ -1,4 +1,9 @@
 <?php
+$link = mysqli_connect("localhost", "root", "", "Data");
+
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+  }
 echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -110,19 +115,25 @@ if(isset($_POST['Register'])){
   $zip_Code = $_POST['zip_Code'];
   $sql = "INSERT INTO expenses(first_name, last_name, email, phone, password, dob, street_Address, city, state, zip_Code) VALUES(
     '$first_name', '$last_name', '$email', '$phone', '$password', '$dob', '$street_Address', '$city', '$state', '$zip_Code')";
+  if (mysqli_query($link, $sql)){
+    mysqli_close();
+    header("Location:/e-commerce/e-commerce/adminpages/profile.php");
+    }
+  }
+else if(isset($_POST['deletion'])){
     $delete_account = $_POST['deletion'];
     $sql = "DELETE FROM users WHERE role = %s VALUES(
       '$delete_account')";
-}
-/*
-if (mysqli_query($link, $sql)){
-    if (mysqli_query($link, $deletion)) {
-      echo "Valid";
-    } else {
-        echo "ERROR: Could not able to execute $deletion. " . mysqli_error($link);
+    if (mysqli_query($link, $sql)){
+      if (mysqli_query($link, $deletion)) {
+        echo "Valid";
+      }
+      else {
+          echo "ERROR: Could not able to execute $deletion. " . mysqli_error($link);
+            }
+          }
+      mysqli_close();
+      header("Location:/e-commerce/e-commerce/adminpages/profile.php");
     }
-    mysqli_close();
-    header("Location:/e-commerce/e-commerce/adminpages/management.php");
 }
-*/
 ?>

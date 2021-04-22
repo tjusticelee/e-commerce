@@ -1,4 +1,9 @@
 <?php
+$link = mysqli_connect("localhost", "root", "", "Data");
+
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+  }
 include admin_only.php
 echo <<< "EOT"
 <!DOCTYPE html>
@@ -6,7 +11,7 @@ echo <<< "EOT"
   <head>
     <meta charset="utf-8">
     <title>Expenses</title>
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>

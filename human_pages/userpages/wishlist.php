@@ -1,11 +1,16 @@
 <?php
+$link = mysqli_connect("localhost", "root", "", "Data");
+
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+  }
 echo <<< "EOT"
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Wishlist</title>
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../../index.css">
   </head>
   <body>
     <header>
@@ -24,7 +29,7 @@ echo <<< "EOT"
 
           <th class="productbox"><?php echo $wishlist['product_name']; ?></th>
 
-          <td class="productbox"><?php echo $inventory['product_price']; ?></td>
+          <td class="productbox"><?php echo $wishlist['product_price']; ?></td>
 
           <button type="button" name="Removal">Remove item from wishlist</button>
         </tr>
@@ -37,7 +42,6 @@ EOT;
 $remove_item = $_POST['Removal'];
 $sql = "DELETE FROM wishlist WHERE product_name = %s VALUES(
   '$remove_item')";
-}
 if (mysqli_query($link, $sql)){
     if (mysqli_query($link, $deletion)) {
       echo "Valid";
